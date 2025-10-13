@@ -8,9 +8,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'storefront3',
-        'HOST': 'mysql',
+        'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'MyPassword'
+        'PASSWORD': '45668489'
     }
 }
 
@@ -27,7 +27,7 @@ CACHES = {
     }
 }
 
-EMAIL_HOST = 'smtp4dev'
+EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 2525
