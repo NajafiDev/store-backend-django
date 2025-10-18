@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'djoser',
-    'silk',
     'playground',
     'debug_toolbar',
     'store',
@@ -43,9 +42,9 @@ INSTALLED_APPS = [
     'likes',
     'core',
 ]
+# INSTALLED_APPS += ['silk']
 
 MIDDLEWARE = [
-    'silk.middleware.SilkyMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
