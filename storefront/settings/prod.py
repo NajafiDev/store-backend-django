@@ -2,11 +2,11 @@ import os
 import dj_database_url
 from .common import *
 
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = ['moshbuy-prod.herokuapp.com']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "store-backend-django.onrender.com").split(",")
 
 DATABASES = {
     'default': dj_database_url.config()
