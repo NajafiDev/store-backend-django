@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: store-backend-django
+    env: python
+    branch: master
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn storeback-django.wsgi:application --workers 3 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: storeback-django.settings.common
+      - key: DEBUG
+        value: "False"
+databases:
+  - name: my-db
+    plan: free
