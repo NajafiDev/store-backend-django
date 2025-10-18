@@ -1,15 +1,22 @@
+# Exported from Render on 2025-10-18T08:48:03Z
+version: "1"
 services:
-  - type: web
-    name: store-backend-django
-    env: python
-    branch: master
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
-    startCommand: gunicorn storeback-django.wsgi:application --workers 3 --bind 0.0.0.0:$PORT
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: storeback-django.settings.common
-      - key: DEBUG
-        value: "False"
+- type: web
+  name: store-backend-django
+  runtime: python
+  repo: https://github.com/NajafiDev/store-backend-django
+  plan: free
+  region: frankfurt
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  autoDeployTrigger: commit
 databases:
-  - name: storeback_django_db
-    plan: free
+- name: storeback_django_db
+  databaseName: storeback_django_db
+  user: storeback_django_db_user
+  plan: free
+  region: frankfurt
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "17"
