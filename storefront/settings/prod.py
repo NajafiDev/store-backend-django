@@ -9,7 +9,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "store-backend-django.onrender.com").split(",")
 
 DATABASES = {
-    'default': dj_database_url.config()
+    "default": dj_database_url.config(default=os.getenv("postgresql://storeback_django_db_user:WmEwQEJsfUkwh9UTwaKk62QnqaEZD2im@dpg-d3pkq349c44c73c4cci0-a.frankfurt-postgres.render.com/storeback_django_db"))
 }
 
 REDIS_URL = os.environ['REDIS_URL']

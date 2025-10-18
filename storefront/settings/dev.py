@@ -10,7 +10,7 @@ DATABASES = {
         'NAME': 'storebackdb1',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': '45668489@Sn'
+        'PASSWORD': '*****'
     }
 }
 
