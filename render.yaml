@@ -11,5 +11,5 @@ services:
       - key: DEBUG
         value: "False"
 databases:
-  - name: my-db
+  - name: storeback_django_db
     plan: free
